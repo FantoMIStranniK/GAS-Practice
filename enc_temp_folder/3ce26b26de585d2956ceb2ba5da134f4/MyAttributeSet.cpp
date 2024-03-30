@@ -7,8 +7,9 @@ UMyAttributeSet::UMyAttributeSet()
 {
 	InitHealth(100.f);
 	InitMaxHealth(100.f);
-	InitAmmo(10.f);
+	InitAmmo(15.f);
 	InitMaxAmmo(15.f);
+	InitSpeed(0.f);
 	InitMaxSpeed(600.f);
 }
 
@@ -18,9 +19,12 @@ void UMyAttributeSet::PreAttributeChange(const FGameplayAttribute& Attribute, fl
 	{
 		NewValue = FMath::Clamp<float>(NewValue, 0.f, GetMaxHealth());
 	}
-
-	if (Attribute == GetAmmoAttribute())
+	else if (Attribute == GetAmmoAttribute())
 	{
 		NewValue = FMath::Clamp<float>(NewValue, 0.f, GetMaxAmmo());
+	}
+	else if (Attribute == GetSpeedAttribute())
+	{
+		NewValue = FMath::Clamp<float>(NewValue, 0.f, GetMaxSpeed());
 	}
 }

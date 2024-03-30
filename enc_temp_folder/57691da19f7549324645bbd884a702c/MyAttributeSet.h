@@ -36,12 +36,16 @@ public:
 	FGameplayAttributeData MaxAmmo;
 
 	UPROPERTY(BlueprintReadOnly, Category = "Stats")
+	FGameplayAttributeData Speed;
+
+	UPROPERTY(BlueprintReadOnly, Category = "Stats")
 	FGameplayAttributeData MaxSpeed;
 
 	ATTRIBUTE_ACESSORS(UMyAttributeSet, Health);
 	ATTRIBUTE_ACESSORS(UMyAttributeSet, MaxHealth);
 	ATTRIBUTE_ACESSORS(UMyAttributeSet, Ammo);
 	ATTRIBUTE_ACESSORS(UMyAttributeSet, MaxAmmo);
+	ATTRIBUTE_ACESSORS(UMyAttributeSet, Speed);
 	ATTRIBUTE_ACESSORS(UMyAttributeSet, MaxSpeed);
 
 	virtual void PreAttributeChange(const FGameplayAttribute& Attribute, float& NewValue) override;
