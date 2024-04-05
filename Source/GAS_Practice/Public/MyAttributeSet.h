@@ -26,7 +26,7 @@ public:
 	UPROPERTY(BlueprintReadOnly, Category = "Stats")
 	FGameplayAttributeData Health;
 
-	UPROPERTY(BlueprintReadOnly, Category = "Stats")
+	UPROPERTY(BlueprintReadOnly, Category = "Stats"	)
 	FGameplayAttributeData MaxHealth;
 
 	UPROPERTY(BlueprintReadOnly, Category = "Stats")
@@ -45,4 +45,5 @@ public:
 	ATTRIBUTE_ACESSORS(UMyAttributeSet, MaxSpeed);
 
 	virtual void PreAttributeChange(const FGameplayAttribute& Attribute, float& NewValue) override;
+	virtual void PreAttributeBaseChange(const FGameplayAttribute& Attribute, float& NewValue) const override;
 };
